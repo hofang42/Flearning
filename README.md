@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+## 📁 `assets/`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Chứa File CSS/global style (nếu dùng)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 `components/`
 
-### `npm start`
+Chứa các **UI component có thể tái sử dụng**, được chia thành các nhóm logic nếu cần:
+- `common/`: các component nhỏ như `Button`, `Modal`, `Input`, v.v.
+- `featureX/`: component gắn liền với một tính năng cụ thể như `QuizCard`, `AnswerOption`, v.v.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> Các component nên được đặt tên theo PascalCase: `QuizCard.jsx`, `LoginForm.jsx`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📁 `hooks/`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Chứa các **custom React hooks** dùng để tái sử dụng logic:
+- `useDebounce.js`
+- `useAuth.js`
+- `useTimer.js`
 
-### `npm run build`
+> Tên hook bắt buộc bắt đầu bằng `use`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 `routes/`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Chứa các component tương ứng với **route/page chính** của ứng dụng:
+- `HomePage.jsx`
+- `LoginPage.jsx`
+- `QuizPage.jsx`
 
-### `npm run eject`
+> Mỗi file trong đây tương ứng với một `<Route path="/...">`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 `services/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Chứa các chức năng liên quan đến kết nối dữ liệu và nhà cung cấp trạng thái:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 📂 `services/api/`
+Chứa các hàm gọi API hoặc thiết lập `axios`:
+- `quizAPI.js`
+- `authAPI.js`
+- `axiosInstance.js`
 
-## Learn More
+### 📂 `services/providers/`
+Chứa các **React Context Providers** hoặc thư viện bên thứ ba được cấu hình (AuthProvider, ThemeProvider,...)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 📂 `store/`
+Chứa logic quản lý **global state** như Redux hoặc Zustand:
+- `store.js`
+- `quizSlice.js`
+- `authSlice.js`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📁 `utils/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Chứa các hàm tiện ích không phụ thuộc vào React:
+- `formatDate.js`
+- `shuffleArray.js`
+- `validateInput.js`
 
-### Analyzing the Bundle Size
+> Dùng để xử lý logic thuần JavaScript có thể tái sử dụng.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📌 Quy ước đặt tên
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Loại                 | Quy ước          | Ví dụ                          |
+|----------------------|------------------|-------------------------------|
+| Folder               | `kebab-case`     | `quiz-page`, `user-form`     |
+| Component file       | `PascalCase.jsx` | `LoginForm.jsx`               |
+| Hook file            | `camelCase.js`   | `useAuth.js`, `useTimer.js`   |
+| API / Utils / Slice  | `camelCase.js`   | `quizAPI.js`, `quizSlice.js`  |
+| CSS module           | `.module.css`    | `LoginForm.module.css`        |
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nếu bạn là thành viên mới, hãy tuân thủ cấu trúc này để giữ codebase sạch và dễ bảo trì.
