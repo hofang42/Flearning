@@ -1,0 +1,123 @@
+@use "sass:color";
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  position: relative;
+
+  &.filter {
+    backdrop-filter: blur(5px);
+    border: 1.5px solid #ff6636;
+    background-color: white;
+    color: #ff6636;
+    font-weight: 600;
+  }
+
+  &.large {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.medium {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &.small {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  &.primary {
+    background-color: #ff6636;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#ff6636, $lightness: -10%);
+    }
+  }
+
+  &.secondary {
+    background-color: #564ffd;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#564ffd, $lightness: -10%);
+    }
+  }
+
+  &.grey {
+    background-color: #1d2026;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #363b47;
+    }
+  }
+
+  &.success {
+    background-color: #23bd33;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#23bd33, $lightness: -10%);
+    }
+  }
+
+  &.warning {
+    background-color: #fd8e1f;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#fd8e1f, $lightness: -10%);
+    }
+  }
+
+  &.error {
+    background-color: #e34444;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#e34444, $lightness: -10%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-text {
+    display: inline-block;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+
+    &.left {
+      margin-right: 0.5rem;
+    }
+
+    &.right {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .filter-badge {
+    background-color: #ff6636;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 8px;
+  }
+}
