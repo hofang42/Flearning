@@ -1,0 +1,37 @@
+.searchInputWrapper {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px; /* Slightly less rounded corners */
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* To make sure children respect border-radius */
+  height: 44px; /* Fixed height like typical navbar inputs */
+}
+
+.searchInputWrapper:focus-within {
+  border-color: #ff7f50; /* Example: Orange focus color, change as needed */
+  box-shadow: 0 0 0 1px rgba(255, 127, 80, 0.3);
+}
+
+.separator {
+  width: 1px;
+  background-color: #e0e0e0;
+  align-self: stretch;
+  margin: 8px 0; /* Vertical margin for the separator */
+}
+
+.inputFieldContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 12px; /* Padding for icon and space before input text */
+  height: 100%;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #888;
+  flex-shrink: 0;
+}
