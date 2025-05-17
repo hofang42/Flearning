@@ -9,7 +9,7 @@ import NavigationBar from './NavigationBar';
 
 
 function Header() {
-    const userExample = {//lưu ý cái này đang là fix cứng đợi sau khi có API sẽ thế vào
+    const userExample = {//NOTE: This is sample data, replace API's data here
         username: 'admin',
         password: '123',
         userImage: '/images/defaultImageUser.png'
