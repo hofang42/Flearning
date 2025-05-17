@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import "./CustomButton.scss";
 
 const CustomButton = ({
-  size = "medium",
-  color = "primary",
-  disabled = false,
-  iconUrl = null,
-  iconPosition = "left",
-  filter = false,
-  filterCount = 0,
+  size = "medium", //small, medium, large
+  color = "primary", // primary, secondary, success,gray, error, warning
+  disabled = false, // true, false
+  iconUrl = null, // URL of the icon
+  iconPosition = "left", // left, right
+  filter = false, // true, false
+  filterCount = 0, // number of items in the filter
   type = "normal", // normal, underline, square, circle
-  isTransparent = false,
+  isTransparent = false, // true, false
   onClick = () => {},
   children,
 }) => {
