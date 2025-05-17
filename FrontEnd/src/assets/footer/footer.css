@@ -1,0 +1,30 @@
+.social-icon{
+    background-color: rgb(68, 66, 66) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+.social-icon:hover{
+    background-color: #FF6F32 !important;
+}
+.footer-link{
+    text-decoration: none !important;
+}
+.list-links li{
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+    
+    .mobile-view{
+        display: none;
+    }
+    .desktop-view{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-view{
+        display: block;
+    }
+    .desktop-view{
+        display: none;
+    }
+}
