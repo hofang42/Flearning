@@ -44,6 +44,7 @@
       "last 1 safari version"
     ]
   },
+
   "devDependencies": {
     "css-loader": "^7.1.2",
     "postcss-loader": "^8.1.1",
