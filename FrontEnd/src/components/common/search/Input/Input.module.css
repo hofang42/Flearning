@@ -1,0 +1,14 @@
+.input {
+  border: none;
+  outline: none;
+  font-size: 14px; /* Match "Browse" or typical input size */
+  width: 100%;
+  padding: 0; /* Remove padding, parent containers will handle it */
+  background-color: transparent;
+  height: 100%; /* Fill height of container */
+  color: #333;
+}
+
+.input::placeholder {
+  color: #999; /* Lighter placeholder */
+}
