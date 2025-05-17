@@ -12,7 +12,7 @@ function SearchBar() {
                     <FontAwesomeIcon icon={faSearch} className="position-absolute " />
                 </button>
             </form>
-            {/* thêm đoạn search gợi ý (PIC: Đạt)*/}
+            {/* add search suggestion component here*/}
         </>
     )
 }
