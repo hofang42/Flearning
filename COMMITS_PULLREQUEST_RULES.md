@@ -12,11 +12,11 @@
 
 ## 🎯 Cấu trúc commit message
 
-[ID Jira][Committer][Function] <mô tả ngắn gọn thay đổi>
+[ID Jira][Committer][Function]<mô tả ngắn gọn thay đổi> <Day Commit DD/MM/YYYY>
 
 ### 🔍 Ví dụ:
 
-[SMS-4][Hoang][UI] Update header component
+[SMS-4][Hoang][UI] Update header component #16.05.2025
 
 📌 _Lưu ý:_ Mục đích là để dễ tra lại task để fix lỗi sau này và quản lý người handle task đó.
 

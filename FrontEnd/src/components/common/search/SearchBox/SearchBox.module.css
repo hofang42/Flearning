@@ -1,0 +1,5 @@
+.searchBoxContainer {
+  position: relative;
+  width: 100%; /* Take full width of its navbar cell */
+  max-width: 500px; /* Optional: prevent it from becoming too wide */
+}

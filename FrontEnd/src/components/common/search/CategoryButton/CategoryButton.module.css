@@ -1,0 +1,20 @@
+.categoryButton {
+  display: flex;
+  align-items: center;
+  padding: 0 16px; /* Vertical padding will be matched by SearchInputWrapper */
+  background-color: transparent; /* Background will be on parent */
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333; /* Text color for "Browse" */
+  white-space: nowrap;
+  height: 100%; /* Fill height of parent */
+}
+
+.categoryButton:hover {
+  background-color: #f8f8f8; /* Slight hover effect */
+}
+
+.categoryButton svg {
+  color: #777; /* Arrow color */
+}
