@@ -1,0 +1,251 @@
+@use "sass:color";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  position: relative;
+
+  &.filter {
+    backdrop-filter: blur(5px);
+    border: 1.5px solid #ff6636;
+    background-color: white;
+    color: #ff6636;
+    font-weight: 600;
+  }
+
+  &.large {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.medium {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &.small {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  // Color Variants
+  &.primary {
+    --underline-color: #ff6636;
+    --main-color-rgb: 255, 102, 54;
+    background-color: #ff6636;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#ff6636, $lightness: -10%);
+    }
+  }
+
+  &.secondary {
+    --underline-color: #564ffd;
+    --main-color-rgb: 86, 79, 253;
+    background-color: #564ffd;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#564ffd, $lightness: -10%);
+    }
+  }
+
+  &.grey {
+    --underline-color: #1d2026;
+    --main-color-rgb: 29, 32, 38;
+    background-color: #1d2026;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #363b47;
+    }
+  }
+
+  &.success {
+    --underline-color: #23bd33;
+    --main-color-rgb: 35, 189, 51;
+    background-color: #23bd33;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#23bd33, $lightness: -10%);
+    }
+  }
+
+  &.warning {
+    --underline-color: #fd8e1f;
+    --main-color-rgb: 253, 142, 31;
+    background-color: #fd8e1f;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#fd8e1f, $lightness: -10%);
+    }
+  }
+
+  &.error {
+    --underline-color: #e34444;
+    --main-color-rgb: 227, 68, 68;
+    background-color: #e34444;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust(#e34444, $lightness: -10%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-text {
+    display: inline-block;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    color: inherit;
+
+    &.left {
+      margin-right: 0.5rem;
+    }
+
+    &.right {
+      margin-left: 0.5rem;
+    }
+
+    &.only-icon {
+      margin: 0;
+    }
+  }
+
+  .filter-badge {
+    background-color: #ff6636;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 8px;
+  }
+
+  &.underline {
+    background-color: transparent;
+    border: none;
+    color: var(--underline-color, #ff6636);
+    padding: 0.5rem;
+    position: relative;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    .btn-content {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--underline-color, #ff6636);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .btn-content::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: var(--underline-color, #ff6636);
+    border: none;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(var(--main-color-rgb, 255, 102, 54), 0.15);
+    }
+
+    .icon {
+      filter: none;
+      color: inherit;
+
+      .btn:hover .only-icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    &.underline {
+      .btn-content::after {
+        background-color: var(--underline-color, #ff6636);
+      }
+
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  // Square and circle - transparent version with transparent text & icon
+  &.square.transparent,
+  &.circle.transparent {
+    background-color: rgba(var(--main-color-rgb, 255, 102, 54), 0);
+    color: transparent;
+    box-shadow: none;
+    padding: 0.5rem;
+
+    .icon.only-icon {
+      width: 16px;
+      height: 16px;
+      filter: none;
+      color: transparent;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: rgba(var(--main-color-rgb, 255, 102, 54), 0.3);
+    }
+  }
+
+  // Square and circle - solid version
+  &.square:not(.transparent),
+  &.circle:not(.transparent) {
+    background-color: rgba(var(--main-color-rgb), 0.2);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+  }
+
+  &.square {
+    border-radius: 4px;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  // Fix: Properly nest hover icon invert filter
+  &:not(.transparent):not(.underline):hover {
+    .icon.only-icon {
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+  }
+}

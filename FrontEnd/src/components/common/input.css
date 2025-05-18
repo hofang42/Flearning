@@ -1,0 +1,85 @@
+.form-control:focus-within {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.counter-text {
+  font-size: 0.875rem;
+}
+
+.input-price,
+.input-icon-divider {
+  height: 2.5rem;
+}
+
+.input-icon-divider {
+  gap: 0.5rem;
+}
+
+.icon-box {
+  min-width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-icon-left,
+.input-icon-right,
+.input-icon-right-feedback {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.input-icon-left {
+  left: 1rem;
+}
+
+.input-icon-right,
+.input-icon-right-feedback {
+  right: 1rem;
+}
+
+.input-box-success {
+  background-color: rgba(25, 135, 84, 0.1);
+  border-color: #198754;
+}
+
+.input-box-error {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: #dc3545;
+}
+
+.outline-none {
+  outline: none !important;
+}
+
+/* Giá & tiền tệ */
+.input-price {
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.input-price input {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.currency-label {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Responsive cho tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .input-price {
+    font-size: 14px;
+  }
+}
