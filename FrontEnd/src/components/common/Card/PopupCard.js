@@ -4,12 +4,25 @@ import "./Card.css";
 
 const PopupCard = ({ cardProps, detailedProps, hoverDelay = 200 }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const [popupPosition, setPopupPosition] = useState("right");
   const timerRef = useRef(null);
   const wrapperRef = useRef(null);
   const cardRef = useRef(null);
 
   const handleMouseEnter = () => {
     timerRef.current = setTimeout(() => {
+      // Xác định vị trí card
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        const spaceRight = window.innerWidth - rect.right;
+        const spaceLeft = rect.left;
+        // Giả sử popup rộng 400px, margin 8px
+        if (spaceRight < 420 && spaceLeft > 420) {
+          setPopupPosition("left");
+        } else {
+          setPopupPosition("right");
+        }
+      }
       setShowPopup(true);
     }, hoverDelay);
   };
@@ -63,7 +76,7 @@ const PopupCard = ({ cardProps, detailedProps, hoverDelay = 200 }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`popup-wrapper ${showPopup ? "visible" : "hidden"}`}
+        className={`popup-wrapper ${showPopup ? "visible" : "hidden"} ${popupPosition}`}
         ref={wrapperRef}
         onMouseLeave={handleMouseLeave}
       >

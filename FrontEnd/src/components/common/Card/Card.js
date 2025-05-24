@@ -71,15 +71,15 @@ const Card = ({ image, category, price, title, rating, students }) => (
   <div className="card-container">
     <div className="card-image" style={{ backgroundImage: `url(${image})` }} />
     <div className="divider" />
-    <div className="card-body">
-      <div className="row">
-        <div className="category">{category}</div>
-        <div className="price">
+    <div className="card-body custom-card-body">
+      <div className="custom-row">
+        <div className="card-category">{category}</div>
+        <div className="card-price">
           <span className="orange-gradient">{price}</span>
         </div>
       </div>
-      <div className="title">{title}</div>
-      <div className="footer">
+      <div className="card-title">{title}</div>
+      <div className="card-footer">
         <div className="rating">
           <StarIcon />
           {rating}
@@ -174,8 +174,8 @@ export const DetailedCard = ({
         </ul>
       </div>
 
-      <button className="button">Add To Cart</button>
-      <button className="detail-button">Course Detail</button>
+      <button className="card-button">Add To Cart</button>
+      <button className="card-detail-button">Course Detail</button>
     </div>
   </div>
 );
